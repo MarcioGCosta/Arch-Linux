@@ -1,12 +1,13 @@
 #!/bin/sh
 
 sudo pacman -S ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn node xsel
-mkdir -a $HOME/.config/bspwm
-mkdir $HOME/.config/sxhkd
-mkdir $HOME/.config/polybar
-mkdir $HOME/.config/nvim	
-mkdir $HOME/.config/kitty
-mkdir $HOME/.config/background
+
+mkdir -p $HOME/.config/bspwm
+mkdir -p $HOME/.config/sxhkd
+mkdir -p $HOME/.config/polybar
+mkdir -p $HOME/.config/nvim	
+mkdir -p $HOME/.config/kitty
+mkdir -p $HOME/.config/background
 
 mv /$HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
 mv /$HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
