@@ -1,6 +1,12 @@
 #!/bin/sh
 
-sudo pacman -Syu ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+sudo pacman -Sy reflector 
+
+sudo reflector -f --sort score --threads 5 --save /etc/pacman.d/mirrolist
+
+sudo pacman -S noto-fonts-emoji ttf-twemoji-color ttf-symbola ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+
+
 
 mkdir -p $HOME/.config/bspwm
 mkdir -p $HOME/.config/sxhkd
