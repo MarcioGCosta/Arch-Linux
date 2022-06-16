@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn node xsel
+sudo pacman -S ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 mkdir -p $HOME/.config/bspwm
 mkdir -p $HOME/.config/sxhkd
