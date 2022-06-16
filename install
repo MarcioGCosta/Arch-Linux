@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+sudo pacman -Syu ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 mkdir -p $HOME/.config/bspwm
 mkdir -p $HOME/.config/sxhkd
@@ -9,8 +9,11 @@ mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
 
-mv $HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
-mv $HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
-mv $HOME/Gentoo/init.vim /$HOME/.config/nvim/
-mv $HOME/Gentoo/*.jpg /$HOME/.config/background/
-mv $HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
+cp $HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
+cp $HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
+cp $HOME/Gentoo/init.vim /$HOME/.config/nvim/
+cp $HOME/Gentoo/*.jpg /$HOME/.config/background/
+cp $HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
