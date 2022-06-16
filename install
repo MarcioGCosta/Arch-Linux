@@ -9,8 +9,8 @@ mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
 
-mv /$HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
-mv /$HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
-mv /$HOME/Gentoo/init.vim /$HOME/.config/nvim/
-mv /$HOME/Gentoo/*.jpg /$HOME/.config/background/
-mv /$HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
+mv $HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
+mv $HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
+mv $HOME/Gentoo/init.vim /$HOME/.config/nvim/
+mv $HOME/Gentoo/*.jpg /$HOME/.config/background/
+mv $HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
