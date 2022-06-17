@@ -17,7 +17,7 @@
 sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
 ## Installing misc progams
-sudo pacman -Syu ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+sudo pacman -Syu htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 ## Folders
 cp $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && cp $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && cp -r $HOME/Arch-Linux/background /$HOME/.config/
