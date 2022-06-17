@@ -1,13 +1,24 @@
 #!/bin/sh
 
+
+#_____/\\\\\\\\\_________________________________/\\\_________        
+# ___/\\\\\\\\\\\\\______________________________\/\\\_________       
+#  __/\\\/////////\\\_____________________________\/\\\_________      
+#   _\/\\\_______\/\\\__/\\/\\\\\\\______/\\\\\\\\_\/\\\_________     
+#    _\/\\\\\\\\\\\\\\\_\/\\\/////\\\___/\\\//////__\/\\\\\\\\\\__    
+#     _\/\\\/////////\\\_\/\\\___\///___/\\\_________\/\\\/////\\\_   
+#      _\/\\\_______\/\\\_\/\\\_________\//\\\________\/\\\___\/\\\_  
+#       _\/\\\_______\/\\\_\/\\\__________\///\\\\\\\\_\/\\\___\/\\\_ 
+#        _\///________\///__\///_____________\////////__\///____\///__
+
+
+
 sudo pacman -Sy reflector 
 
 sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist
 
 
 sudo pacman -Syu firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
-
-
 
 mkdir -p $HOME/.config/picom
 mkdir -p $HOME/.config/bspwm
@@ -18,6 +29,7 @@ mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.xinit
 
 touch $HOME/.xinitrc
+
 echo "exec bspwm" > $HOME/.xinitrc
 
 cp $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc
