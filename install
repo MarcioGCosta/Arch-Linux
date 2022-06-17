@@ -48,6 +48,6 @@ sudo make install
 
 cd
 
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh marcioc
 
 yay -S pfetch orphan manager dashbinsh
