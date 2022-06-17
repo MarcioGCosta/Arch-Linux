@@ -38,7 +38,7 @@ cp $HOME/Arch-Linux/config/launch.sh /$HOME/.config/polybar
 cp $HOME/Arch-Linux/config/bspwmrc /$HOME/.config/bspwm/
 cp $HOME/Arch-Linux/config/sxhkdrc /$HOME/.config/sxhkd/
 cp $HOME/Arch-Linux/config/init.vim /$HOME/.config/nvim/
-cp $HOME/Arch-Linux/background /$HOME/.config/
+cp -r $HOME/Arch-Linux/background /$HOME/.config/
 cp $HOME/Arch-Linux/config/kitty.conf /$HOME/.config/kitty/
 cp $HOME/Arch-Linux/config/picom.conf /$HOME/.config/picom
 
