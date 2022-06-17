@@ -10,6 +10,7 @@ sudo pacman -S zsh dash noto-fonts-emoji ttf-twemoji-color ttf-symbola ttf-nerd-
 
 sudo ln -sfT dash /usr/bin/sh
 
+
 mkdir -p $HOME/.config/picom
 mkdir -p $HOME/.config/bspwm
 mkdir -p $HOME/.config/sxhkd
@@ -18,7 +19,7 @@ mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
 
-
+cp $HOME/Gentoo/.zshrc /$HOME/.zshrc
 cp $HOME/Gentoo/config.ini /$HOME/.config/polybar
 cp $HOME/Gentoo/launch.sh /$HOME/.config/polybar
 cp $HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
