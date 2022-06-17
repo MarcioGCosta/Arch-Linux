@@ -29,6 +29,7 @@ cp $HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
 cp $HOME/Gentoo/init.vim /$HOME/.config/nvim/
 cp $HOME/Gentoo/*.jpg /$HOME/.config/background/
 cp $HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
+cp $HOME/Gentoo/picom.conf /$HOME/.config/picom
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
