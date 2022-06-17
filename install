@@ -18,7 +18,8 @@ mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
 mkdir -p $HOME/.xinit
 
-echo "exec bspwm" > $HOME/.xinit
+touch $HOME/.xinitrc
+echo "exec bspwm" > $HOME/.xinitrc
 
 cp $HOME/Gentoo/.zshrc /$HOME/.zshrc
 cp $HOME/Gentoo/config.ini /$HOME/.config/polybar
@@ -50,4 +51,4 @@ cd
 
 sudo chsh -s /usr/bin/zsh marcioc
 
-yay -S pfetch orphan manager dashbinsh
+yay -S pfetch orphan-manager dashbinsh
