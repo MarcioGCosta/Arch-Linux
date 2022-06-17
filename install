@@ -2,7 +2,7 @@
 
 sudo pacman -Sy reflector 
 
-sudo reflector -f --sort score --threads 5 --save /etc/pacman.d/mirrolist
+sudo reflector -f --sort score --threads 5 --save e
 
 sudo pacman -S noto-fonts-emoji ttf-twemoji-color ttf-symbola ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
@@ -15,6 +15,7 @@ mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
 
+cp $HOME/Gentoo/launch.sh /$HOME/.config/polybar
 cp $HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
 cp $HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
 cp $HOME/Gentoo/init.vim /$HOME/.config/nvim/

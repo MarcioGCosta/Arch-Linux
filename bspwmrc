@@ -1,5 +1,6 @@
 #! /bin/sh
 
+xrandr -s 1360x768
 setxkbmap br dvorak
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom -b --no-fading-openclose &
