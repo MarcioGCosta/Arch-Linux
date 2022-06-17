@@ -43,7 +43,7 @@ sudo chsh -s /usr/bin/zsh marcioc
 
 ## Configuring doas and Configuring neovim for doas/su 
 sudo mv $HOME/Arch-Linux/config/doas.conf /etc/
-sudo mv $HOME/.config/nvim /root/.config/
+sudo cp $HOME/.config/nvim /root/.config/
 
 ## Installing misc programs in yay 
 yay -S ly pfetch orphan-manager dashbinsh
