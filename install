@@ -64,3 +64,7 @@ cd
 sudo chsh -s /usr/bin/zsh marcioc
 
 yay -S  pfetch orphan-manager dashbinsh
+
+rm -rf $HOME/zsh-syntax*
+rm -rf $HOME/Arch-Linux/ 
+
