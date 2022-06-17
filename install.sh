@@ -42,8 +42,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd zsh-syn
 sudo chsh -s /usr/bin/zsh marcioc
 
 ## Configuring doas and Configuring neovim for doas/su 
-sudo mv $HOME/Arch-Linux/config/doas.conf /etc/
-sudo cp $HOME/.config/nvim /root/.config/
+sudo mv $HOME/Arch-Linux/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
 yay -S ly pfetch orphan-manager dashbinsh
@@ -55,5 +54,5 @@ sudo systemctl enable ly.service
 sudo systemctl enable ufw.service
 
 ## Uncommenting lines in pacman.conf, and make output  prettier
-sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/a' ILoveCandy' /etc/pacman.conf
+sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/a ILoveCandy' /etc/pacman.conf
 
