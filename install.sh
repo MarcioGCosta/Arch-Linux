@@ -12,6 +12,8 @@
 #        _\///________\///__\///_____________\////////__\///____\///__
 
 
+## Uncommenting lines in pacman.conf, and making output prettier
+sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/a ILoveCandy' /etc/pacman.conf
 
 ## Ranking mirrorlist 
 sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
@@ -44,13 +46,10 @@ yay -S ly firefox-h264ify firefox-ublock-origin firefox-decentraleyes firefox-da
 ## Enabling daemons
 sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
 
-## Uncommenting lines in pacman.conf, and making output prettier
-sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/a ILoveCandy' /etc/pacman.conf
-
 ## Setting timezone
 sudo timedatectl set-timezone America/Sao_Paulo
 
 ## Installing vim-plug to root user
 sudo mv /$HOME/Arch-Linux/config/vim-plug.sh /root 
 
-./root/vim-plug.sh
+sudo su | echo "Run ./vim-plug.sh"
