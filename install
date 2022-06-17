@@ -4,6 +4,7 @@ sudo pacman -Sy reflector
 
 sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist
 
+
 sudo pacman -S zsh noto-fonts-emoji ttf-twemoji-color ttf-symbola ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 mkdir -p $HOME/.config/picom
@@ -13,7 +14,9 @@ mkdir -p $HOME/.config/polybar
 mkdir -p $HOME/.config/nvim	
 mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
+mkdir -p $HOME/.xinit
 
+echo "exec bspwm"
 cp $HOME/Gentoo/.zshrc /$HOME/.zshrc
 cp $HOME/Gentoo/config.ini /$HOME/.config/polybar
 cp $HOME/Gentoo/launch.sh /$HOME/.config/polybar
@@ -25,6 +28,14 @@ cp $HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+git clone https://aur.archlinux.org/yay.git
+
+cd yay 
+
+makepkg -si
+
+cd 
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
