@@ -14,19 +14,13 @@
 
 
 ## Ranking mirrorlist 
-sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist.
-sudo rm /etc/pacman.d/mirrorlist
-sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
+sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
-## Installing misc  progams
-sudo pacman -Syu ufw wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+## Installing misc progams
+sudo pacman -Syu ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 ## Folders
-cp $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc
-cp $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc
-mv $HOME/Arch-Linux/config/.config /$HOME/                                                                    
-## Installing misc programs in yay        
-cp -r $HOME/Arch-Linux/background /$HOME/.config/
+cp $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && cp $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && cp -r $HOME/Arch-Linux/background /$HOME/.config/
 
 ## Installing vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -47,11 +41,8 @@ sudo mv $HOME/Arch-Linux/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root
 ## Installing misc programs in yay 
 yay -S ly pfetch orphan-manager dashbinsh
 
-## Enabling ly(Display Manager)
-sudo systemctl enable ly.service
-
-## Enabling ufw(Firewall)
-sudo systemctl enable ufw.service
+## Enabling daemons
+sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
 
 ## Uncommenting lines in pacman.conf, and make output  prettier
 sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/a ILoveCandy' /etc/pacman.conf
