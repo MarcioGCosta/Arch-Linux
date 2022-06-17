@@ -36,10 +36,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd zsh-syn
 sudo chsh -s /usr/bin/zsh marcioc
 
 ## Configuring doas and Configuring neovim for doas/su 
-sudo mv $HOME/Arch-Linux/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
+sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
-yay -S ly pfetch orphan-manager dashbinsh
+yay -S ly firefox-h264ify firefox-ublock-origin firefox-decentraleyes firefox-dark-reader pfetch orphan-manager dashbinsh
 
 ## Enabling daemons
 sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
@@ -51,6 +51,6 @@ sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^
 sudo timedatectl set-timezone America/Sao_Paulo
 
 ## Installing vim-plug to root user
-sudo mv /$HOME/Arch-Linux/vim-plug.sh /root 
+sudo mv /$HOME/Arch-Linux/config/vim-plug.sh /root 
 
 ./root/vim-plug.sh
