@@ -7,7 +7,7 @@ sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist
 
 sudo pacman -Syu firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
-sudo  ln -sfT dash /usr/bin/sh
+
 
 mkdir -p $HOME/.config/picom
 mkdir -p $HOME/.config/bspwm
@@ -15,21 +15,20 @@ mkdir -p $HOME/.config/sxhkd
 mkdir -p $HOME/.config/polybar
 mkdir -p $HOME/.config/nvim	
 mkdir -p $HOME/.config/kitty
-mkdir -p $HOME/.config/background
 mkdir -p $HOME/.xinit
 
 touch $HOME/.xinitrc
 echo "exec bspwm" > $HOME/.xinitrc
 
-cp $HOME/Gentoo/.zshrc /$HOME/.zshrc
-cp $HOME/Gentoo/config.ini /$HOME/.config/polybar
-cp $HOME/Gentoo/launch.sh /$HOME/.config/polybar
-cp $HOME/Gentoo/bspwmrc /$HOME/.config/bspwm/
-cp $HOME/Gentoo/sxhkdrc /$HOME/.config/sxhkd/
-cp $HOME/Gentoo/init.vim /$HOME/.config/nvim/
-cp $HOME/Gentoo/*.jpg /$HOME/.config/background/
-cp $HOME/Gentoo/kitty.conf /$HOME/.config/kitty/
-cp $HOME/Gentoo/picom.conf /$HOME/.config/picom
+cp $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc
+cp $HOME/Arch-Linux/config/config.ini /$HOME/.config/polybar
+cp $HOME/Arch-Linux/config/launch.sh /$HOME/.config/polybar
+cp $HOME/Arch-Linux/config/bspwmrc /$HOME/.config/bspwm/
+cp $HOME/Arch-Linux/config/sxhkdrc /$HOME/.config/sxhkd/
+cp $HOME/Arch-Linux/config/init.vim /$HOME/.config/nvim/
+cp $HOME/Arch-Linux/background /$HOME/.config/
+cp $HOME/Arch-Linux/config/kitty.conf /$HOME/.config/kitty/
+cp $HOME/Arch-Linux/config/picom.conf /$HOME/.config/picom
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
