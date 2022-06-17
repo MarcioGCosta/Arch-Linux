@@ -5,7 +5,10 @@ sudo pacman -Sy reflector
 sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist
 
 
-sudo pacman -S zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+sudo pacman -S dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+
+
+sudo  ln -sfT dash /usr/bin/sh
 
 mkdir -p $HOME/.config/picom
 mkdir -p $HOME/.config/bspwm
@@ -16,7 +19,8 @@ mkdir -p $HOME/.config/kitty
 mkdir -p $HOME/.config/background
 mkdir -p $HOME/.xinit
 
-echo "exec bspwm"
+echo "exec bspwm" > $HOME/.xinit
+
 cp $HOME/Gentoo/.zshrc /$HOME/.zshrc
 cp $HOME/Gentoo/config.ini /$HOME/.config/polybar
 cp $HOME/Gentoo/launch.sh /$HOME/.config/polybar
