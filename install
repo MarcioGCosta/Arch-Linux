@@ -51,7 +51,9 @@ cd yay
 
 makepkg -si
 
-cd 
+cd ..
+
+rm -rf yay
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
@@ -59,12 +61,19 @@ cd zsh-syntax-highlighting
 
 sudo make install
 
-cd
+cd ..
+
+rm -rf zsh-syntax-highlighting
 
 sudo chsh -s /usr/bin/zsh marcioc
 
 yay -S  pfetch orphan-manager dashbinsh
 
-rm -rf $HOME/zsh-syntax*
-rm -rf $HOME/Arch-Linux/ 
+sudo su
+
+touch /etc/doas.conf && echo "permit nopass marcioc as root" >> /etc/doas.conf
+
+mkdir /root/.config/ && mkdir /root/.config/nvim && cp $HOME/Arch-Linux/config/init.vim /root/.config/
+
+su marcioc
 
