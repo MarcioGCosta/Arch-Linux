@@ -5,8 +5,7 @@ sudo pacman -Sy reflector
 sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist
 
 
-sudo pacman -S dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
-
+sudo pacman -S xorg-server mpv yt-dlp libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 sudo  ln -sfT dash /usr/bin/sh
 
@@ -51,3 +50,4 @@ cd
 
 chsh -s /usr/bin/zsh
 
+yay -S pfetch orphan manager dashbinsh
