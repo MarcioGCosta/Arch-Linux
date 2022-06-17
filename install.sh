@@ -19,7 +19,7 @@ sudo rm /etc/pacman.d/mirrorlist
 sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
 ## Installing misc  progams
-sudo pacman -Syu firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+sudo pacman -Syu wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 ## Folders
 cp $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc
@@ -51,4 +51,6 @@ yay -S ly pfetch orphan-manager dashbinsh
 ## Enabling ly(Display Manager)
 sudo systemctl enable ly.service
 
+## Uncommenting lines in pacman.conf, and make output  prettier
+sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/a' ILoveCandy' /etc/pacman.conf
 
