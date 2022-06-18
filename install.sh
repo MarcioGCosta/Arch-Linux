@@ -50,6 +50,4 @@ sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo sy
 sudo timedatectl set-timezone America/Sao_Paulo
 
 ## Installing vim-plug to root user
-sudo mv /$HOME/Arch-Linux/config/vim-plug.sh /root 
-
-sudo su | echo "Run ./vim-plug.sh"
+sudo mv /$HOME/Arch-Linux/config/vim-plug.sh /root  && sudo su | echo "Run ./vim-plug.sh" && cd
