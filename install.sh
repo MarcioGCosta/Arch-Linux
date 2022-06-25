@@ -52,7 +52,7 @@ sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim
 yay -S ttf-twemoji ttf-twemoji-color ttf-symbola lxappearance  pfetch orphan-manager dashbinsh 
 
 ## Enabling daemons
-sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service && sudo systemctl enable lightdm.service
+sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
 
 ## Setting timezone
 sudo timedatectl set-timezone America/Sao_Paulo
