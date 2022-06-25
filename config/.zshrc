@@ -300,11 +300,11 @@ export VISUAL="nvim"
 
 
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions.zsh
 
 
 _comp_options+=(globdots) # With hidden files
 
 ### Source plugins
 ##################
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
