@@ -19,7 +19,10 @@ sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^
 yes | sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
 ## Installing misc progams
-yes | sudo pacman -Syu pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+yes | sudo pacman -Syu lightdm lightdm-slick-greeter pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+
+## Configuring lightdm
+sudo sed '/greeter-session=example-gtk-gnome/s/^#//'-i /etc/lightdm/lightdm.conf && sudo sed 's/example-gtk-gnome/lightdm-slick-greeter/' -i /etc/lightdm/lightdm.conf
 
 ## Moving folders
 mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0
@@ -35,6 +38,8 @@ sudo ln -sfT dash /usr/bin/sh
 ## Installing yay
 git clone https://aur.archlinux.org/yay.git && cd yay* && yes | makepkg -si && cd .. && rm -rf yay
 
+## zshautossugenstions
+git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosuggestions /usr/share/zsh/plugins/
 ## Installing zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd zsh-syntax-highlighting && sudo make -j5 install && cd .. && rm -rf zsh-syntax-highlighting && cd
 
@@ -45,13 +50,11 @@ sudo chsh -s /usr/bin/zsh marcioc
 sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
-yay -S ly lxappearance  pfetch orphan-manager dashbinsh 
+yay -S lxappearance  pfetch orphan-manager dashbinsh 
 
 ## Enabling daemons
-sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
+sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service && sudo systemctl enable lightdm.service
 
 ## Setting timezone
 sudo timedatectl set-timezone America/Sao_Paulo
 
-## Installing vim-plug to root user
-sudo cp /$HOME/Arch-Linux/config/vim-plug.sh /root  && sudo su | echo "Run ./vim-plug.sh" && cd

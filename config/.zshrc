@@ -3,6 +3,7 @@
 #######################################################
 
 ### Set/unset ZSH options
+#
 #########################
 # setopt NOHUP
 # setopt NOTIFY
@@ -15,6 +16,7 @@ setopt APPEND_HISTORY
 unsetopt BG_NICE
 setopt CORRECT
 setopt EXTENDED_HISTORY
+setopt HIST_SAVE_NO_DUPS
 # setopt HASH_CMDS
 setopt MENUCOMPLETE
 setopt ALL_EXPORT
@@ -291,6 +293,17 @@ zstyle ':completion:*:ssh:*' tag-order \
 zstyle ':completion:*:ssh:*' group-order \
    hosts-domain hosts-host users hosts-ipaddr
 zstyle '*' single-ignored show
+
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+_comp_options+=(globdots) # With hidden files
 
 ### Source plugins
 ##################
