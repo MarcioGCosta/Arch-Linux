@@ -39,7 +39,7 @@ git clone https://aur.archlinux.org/yay.git && cd yay* && yes | makepkg -si && c
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd zsh-syntax-highlighting && sudo make -j5 install && cd .. && rm -rf zsh-syntax-highlighting && cd
 
 ## zshautossugenstions
-git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosuggestions /usr/share/zsh/plugins/
+git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosuggestions/ /usr/share/zsh/plugins/
 
 
 ## Changing user shell to zsh
