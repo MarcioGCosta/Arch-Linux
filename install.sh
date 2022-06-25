@@ -19,7 +19,7 @@ sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^
 sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
 ## Installing misc progams
-sudo pacman -Syu pulsemixer arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
+sudo pacman -Syu pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 ## Moving folders
 mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0
@@ -45,7 +45,7 @@ sudo chsh -s /usr/bin/zsh marcioc
 sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
-yay -S ly e4rat-lite-git grub-customizer lxappearance firefox-h264ify firefox-ublock-origin firefox-decentraleyes pfetch orphan-manager dashbinsh 
+yay -S ly lxappearance  pfetch orphan-manager dashbinsh 
 
 ## Enabling daemons
 sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
@@ -54,4 +54,4 @@ sudo systemctl enable ly.service && sudo systemctl enable ufw.service && sudo sy
 sudo timedatectl set-timezone America/Sao_Paulo
 
 ## Installing vim-plug to root user
-sudo mv /$HOME/Arch-Linux/config/vim-plug.sh /root  && sudo su | echo "Run ./vim-plug.sh" && cd
+sudo cp /$HOME/Arch-Linux/config/vim-plug.sh /root  && sudo su | echo "Run ./vim-plug.sh" && cd
