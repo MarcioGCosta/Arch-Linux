@@ -21,6 +21,9 @@ yes | sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --sav
 ## Installing misc progams
 yes | sudo pacman -Syu lightdm lightdm-slick-greeter pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
+
+
+
 ## Configuring lightdm
 sudo sed '/greeter-session=example-gtk-gnome/s/^#//' -i /etc/lightdm/lightdm.conf && sudo sed 's/example-gtk-gnome/lightdm-slick-greeter/' -i /etc/lightdm/lightdm.conf
 
@@ -38,10 +41,12 @@ sudo ln -sfT dash /usr/bin/sh
 ## Installing yay
 git clone https://aur.archlinux.org/yay.git && cd yay* && yes | makepkg -si && cd .. && rm -rf yay
 
-## zshautossugenstions
-git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosuggestions /usr/share/zsh/plugins/
 ## Installing zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd zsh-syntax-highlighting && sudo make -j5 install && cd .. && rm -rf zsh-syntax-highlighting && cd
+
+## zshautossugenstions
+git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosuggestions /usr/share/zsh/plugins/
+
 
 ## Changing user shell to zsh
 sudo chsh -s /usr/bin/zsh marcioc
