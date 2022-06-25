@@ -22,7 +22,7 @@ yes | sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --sav
 yes | sudo pacman -Syu lightdm lightdm-slick-greeter pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 ## Configuring lightdm
-sudo sed '/greeter-session=example-gtk-gnome/s/^#//'-i /etc/lightdm/lightdm.conf && sudo sed 's/example-gtk-gnome/lightdm-slick-greeter/' -i /etc/lightdm/lightdm.conf
+sudo sed '/greeter-session=example-gtk-gnome/s/^#//' -i /etc/lightdm/lightdm.conf && sudo sed 's/example-gtk-gnome/lightdm-slick-greeter/' -i /etc/lightdm/lightdm.conf
 
 ## Moving folders
 mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0
@@ -50,7 +50,7 @@ sudo chsh -s /usr/bin/zsh marcioc
 sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
-yay -S lxappearance  pfetch orphan-manager dashbinsh 
+yay -S ttf-twemoji ttf-twemoji-color ttf-symbola lxappearance  pfetch orphan-manager dashbinsh 
 
 ## Enabling daemons
 sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service && sudo systemctl enable lightdm.service
