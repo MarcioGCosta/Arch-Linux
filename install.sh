@@ -25,7 +25,7 @@ yes | sudo pacman -Syu lightdm lightdm-slick-greeter pulsemixer qbittorrent arc-
 sudo sed '/greeter-session=example-gtk-gnome/s/^#//' -i /etc/lightdm/lightdm.conf && sudo sed 's/example-gtk-gnome/lightdm-slick-greeter/' -i /etc/lightdm/lightdm.conf
 
 ## Moving folders
-mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0
+mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0 ..
 
 ## Installing vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
