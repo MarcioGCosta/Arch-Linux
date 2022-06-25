@@ -8,12 +8,12 @@ feh --randomize --no-fehbg  --bg-scale $HOME/.config/background/* &
 $HOME/.config/polybar/launch.sh &
 redshift -l -20.83106:-40.72932 -O 4500 -b 0.7:0.4 &
 
-
-
 bspc monitor -d I II III IV V
 
 bspc config border_width         1
-bspc config window_gap           2
+bspc config left_padding           3
+bspc config right_padding           3
+bspc config window_gap           3
 bspc config bottom_padding	 3
 bspc config top_padding		 15
 
