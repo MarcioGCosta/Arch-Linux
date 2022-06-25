@@ -19,13 +19,7 @@ sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^
 yes | sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
 ## Installing misc progams
-yes | sudo pacman -Syu lightdm lightdm-slick-greeter pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
-
-
-
-
-## Configuring lightdm
-sudo sed '/greeter-session=example-gtk-gnome/s/^#//' -i /etc/lightdm/lightdm.conf && sudo sed 's/example-gtk-gnome/lightdm-slick-greeter/' -i /etc/lightdm/lightdm.conf
+yes | sudo pacman -Syu pulsemixer qbittorrent arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty xorg-server mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl xorg-setxkbmap dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom bspwm sxhkd neovim xorg-xinit doas yarn npm xsel
 
 ## Moving folders
 mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0 ..
