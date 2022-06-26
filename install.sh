@@ -22,10 +22,10 @@ yes | sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --sav
 sudo mv $HOME/Arch-Linux/config/20-intel-gpu.conf /etc/X11/xorg.conf.d/
 
 ## Installing misc progams
-yes | sudo pacman -Syu xf86-video-intel xorg-server xorg-xinit xorg-setxkbmap xorg-xrandr pulsemixer qbittorrent bspwm sxhkd arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom neovim doas yarn npm xsel
+yes | sudo pacman -Syu xf86-video-intel xorg-server xorg-setxkbmap xorg-xrandr pulsemixer qbittorrent bspwm sxhkd arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom neovim doas yarn npm xsel
 
 ## Moving folders
-mv $HOME/Arch-Linux/config/.xinitrc /$HOME/.xinitrc && mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0 ..
+mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0 ..
 
 ## Installing vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -41,7 +41,7 @@ git clone https://aur.archlinux.org/yay.git && cd yay* && yes | makepkg -si && c
 ## Installing zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd zsh-syntax-highlighting && sudo make -j5 install && cd .. && rm -rf zsh-syntax-highlighting && cd
 
-## zshautossugenstions
+## zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosuggestions/ /usr/share/zsh/plugins/
 
 
