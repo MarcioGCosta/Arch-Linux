@@ -52,10 +52,10 @@ sudo chsh -s /usr/bin/zsh marcioc
 sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
-yay -S ttf-twemoji ttf-twemoji-color ttf-symbola lxappearance  pfetch orphan-manager dashbinsh 
+yay -S ttf-twemoji ttf-twemoji-color ly ttf-symbola lxappearance  pfetch orphan-manager dashbinsh 
 
 ## Enabling daemons
-sudo systemctl enable ufw.service && sudo systemctl enable ntpd.service
+sudo systemctl enable ufw.service && sudo systemctl enable ntpd.servicesudo && sudo systemctl enable ly.service
 
 ## Setting timezone
 sudo timedatectl set-timezone America/Sao_Paulo
