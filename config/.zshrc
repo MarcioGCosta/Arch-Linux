@@ -1,7 +1,7 @@
 #######################################################
 ####### Anarchy ZSH configuration file    #######
 #######################################################
-source /usr/share/zsh/plugins/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 
@@ -45,7 +45,7 @@ zle -N history-beginning-search-forward-end history-search-end
 ### Set variables
 #################
 PATH="/usr/local/bin:/usr/local/sbin/:$PATH"
-HISTFILE=$HOME/.zhistory
+HISTFILE=$HOME/.zshistory
 HISTSIZE=1000
 SAVEHIST=1000
 LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
@@ -217,9 +217,16 @@ zstyle ':completion:*:ssh:*' group-order \
    hosts-domain hosts-host users hosts-ipaddr
 zstyle '*' single-ignored show
 
-
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+export LYNX_CFG_PATH="$XDG_CONFIG_HOME"/lynx.cfg
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc 
 export EDITOR="nvim"
+export TERM="kitty"
 export VISUAL="nvim"
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority 
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 
 _comp_options+=(globdots) # With hidden files
 
