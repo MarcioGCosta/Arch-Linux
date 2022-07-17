@@ -1,31 +1,19 @@
 #!/bin/sh
 
-
-#_____/\\\\\\\\\_________________________________/\\\_________        
-# ___/\\\\\\\\\\\\\______________________________\/\\\_________       
-#  __/\\\/////////\\\_____________________________\/\\\_________      
-#   _\/\\\_______\/\\\__/\\/\\\\\\\______/\\\\\\\\_\/\\\_________     
-#    _\/\\\\\\\\\\\\\\\_\/\\\/////\\\___/\\\//////__\/\\\\\\\\\\__    
-#     _\/\\\/////////\\\_\/\\\___\///___/\\\_________\/\\\/////\\\_   
-#      _\/\\\_______\/\\\_\/\\\_________\//\\\________\/\\\___\/\\\_  
-#       _\/\\\_______\/\\\_\/\\\__________\///\\\\\\\\_\/\\\___\/\\\_ 
-#        _\///________\///__\///_____________\////////__\///____\///__
-
-
 ## Uncommenting lines in pacman.conf, and making output prettier
 sudo sed '/Color/s/^#//' -i /etc/pacman.conf && sudo sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf && sudo sed '/Color/i ILoveCandy' -i /etc/pacman.conf
 
 ## Ranking mirrorlist 
 yes | sudo pacman -Sy reflector && sudo reflector --sort score --threads 5 --save /etc/pacman.d/mirrorlist. && sudo rm /etc/pacman.d/mirrorlist && sudo mv /etc/pacman.d/mirrorlist. /etc/pacman.d/mirrorlist
 
-## Configuring xorg
-sudo mv $HOME/Arch-Linux/config/20-intel-gpu.conf /etc/X11/xorg.conf.d/
-
 ## Installing misc progams
 yes | sudo pacman -Syu libvdpau-va-gl xf86-video-intel xorg-server xorg-setxkbmap xorg-xrandr pulsemixer qbittorrent bspwm sxhkd arc-gtk-theme bat ripgrep htop ufw ntp wireplumber pipewire-jack firefox polybar kitty mpv yt-dlp pipewire papirus-icon-theme pipewire-pulse pipewire-alsa libva-intel-driver dmenu playerctl dash go zsh noto-fonts-emoji ttf-nerd-fonts-symbols ttf-ibm-plex feh picom neovim doas yarn npm xsel
 
 ## Moving folders
-mv $HOME/Arch-Linux/config/.zshrc /$HOME/.zshrc && mv $HOME/Arch-Linux/config/.config /$HOME/ && mv $HOME/Arch-Linux/background /$HOME/.config/ && mv $HOME/Arch-Linux/config/.gtkrc-2.0 ..
+mv $HOME/Arice/config/.zshrc /$HOME/.zshrc && mv $HOME/Arice/config/.config /$HOME/ && mv $HOME/Arice/background /$HOME/.config/ && mv $HOME/Arice/config/.gtkrc-2.0 ..
+
+## Configuring xorg (if you are using a virtual machine your xorg won't work) 
+sudo mv $HOME/Arice/config/20-intel-gpu.conf /etc/X11/xorg.conf.d/
 
 ## Installing vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -49,7 +37,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions && sudo mv zsh-autosu
 sudo chsh -s /usr/bin/zsh marcioc
 
 ## Configuring doas and Configuring neovim for doas/su 
-sudo mv $HOME/Arch-Linux/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
+sudo mv $HOME/Arice/config/doas.conf /etc/ && sudo cp -r $HOME/.config/nvim/ /root/.config/
 
 ## Installing misc programs in yay 
 yay -S ttf-twemoji ttf-twemoji-color ly ttf-symbola lxappearance  pfetch orphan-manager dashbinsh 
